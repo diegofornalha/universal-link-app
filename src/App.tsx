@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
-import './App.css'; // Adicione os estilos aqui ou use Styled Components
+import './App.css'; // Estilos
 
 const App: React.FC = () => {
   // Função para detectar o dispositivo e redirecionar automaticamente
   const detectDeviceAndRedirect = () => {
     const userAgent = navigator.userAgent || navigator.vendor;
-    const appUrlScheme = "weixin://dl/business/?t=jw5RP9P4GVf";
+    const phizAppUrlScheme = "phizscheme://open"; // URL Scheme do app Phiz
     const appStoreUrl = "https://apps.apple.com/pt/app/phiz-chat/id6447375837";
     const googlePlayUrl = "https://play.google.com/store/apps/details?id=live.phiz.app2";
     const fallbackUrl = "https://phiz.com.br/download";
 
     if (/android/i.test(userAgent)) {
       // Redireciona para o app ou Google Play no Android
-      window.location.href = appUrlScheme;
+      window.location.href = phizAppUrlScheme;
       setTimeout(() => {
         window.location.href = googlePlayUrl;
       }, 1500);
     } else if (/iPad|iPhone|iPod/.test(userAgent)) {
       // Redireciona para o app ou App Store no iOS
-      window.location.href = appUrlScheme;
+      window.location.href = phizAppUrlScheme;
       setTimeout(() => {
         window.location.href = appStoreUrl;
       }, 1500);
@@ -29,7 +29,7 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    // Executa o redirecionamento assim que o componente montar
+    // Executa o redirecionamento assim que o componente monta
     detectDeviceAndRedirect();
   }, []);
 
