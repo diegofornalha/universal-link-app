@@ -8,7 +8,7 @@ const App: React.FC = () => {
     const phizAppUrlScheme = "phizscheme://open"; // URL Scheme do app Phiz
     const appStoreUrl = "https://apps.apple.com/pt/app/phiz-chat/id6447375837";
     const googlePlayUrl = "https://play.google.com/store/apps/details?id=live.phiz.app2";
-    const fallbackUrl = "https://phiz.com.br/download";
+    const fallbackUrl = "https://flowgpt.com/pt-BR/chat/o-que-jesus-diria";
 
     if (/android/i.test(userAgent)) {
       // Redireciona para o app ou Google Play no Android
